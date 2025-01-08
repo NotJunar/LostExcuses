@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Excuses</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a;  /* Slate 900 */
+            color: #f1f5f9;  /* Slate 100 */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 36rem;
+            padding: 2rem;
+            background-color: #1e293b;  /* Slate 800 */
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-2px);
+        }
+
+        .excuse {
+            font-size: clamp(1.25rem, 3vw, 1.875rem);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+        }
+
+        .reload {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #10b981;  /* Emerald 500 */
+            color: #ffffff;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .reload:hover {
+            background-color: #059669;  /* Emerald 600 */
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .reload:active {
+            transform: translateY(0);
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f8fafc;  /* Slate 50 */
+                color: #0f172a;  /* Slate 900 */
+            }
+            
+            .container {
+                background-color: #ffffff;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="excuse" id="excuse">Loading your next excuse...</div>
+        <button class="reload" onclick="location.reload()">Give Me Another Excuse</button>
+    </div>
+    <script>
+        const excuses = [
+            "Lag, always the lag!",
+            "My mouse double-clicked on its own!",
+            "You’re using hacks, admit it!",
+            "My FPS dropped to 3 right before the fight.",
+            "The hit registration on this server is trash.",
+            "You were abusing reach!",
+            "My keyboard disconnected mid-combo.",
+            "I was distracted by my cat jumping on my desk.",
+            "I wasn’t even trying, next round is serious.",
+            "I had a huge ping spike during the fight.",
+            "The sun was in my eyes, literally.",
+            "I’m not used to this sensitivity, still tweaking it.",
+            "I thought we were just sparring, not going all out!",
+            "My little brother started yelling next to me.",
+            "I misclicked and opened my inventory.",
+            "The server lagged right as I was about to hit you.",
+            "Your armor is obviously duped.",
+            "My monitor turned off for no reason.",
+            "I wasn’t warmed up, give me another chance.",
+            "You only won because of the gear advantage.",
+            "My potion didn’t register!",
+            "The anti-cheat falsely flagged me, so I froze.",
+            "My dog barked and scared me mid-fight.",
+            "My sprint key got stuck, couldn’t strafe.",
+            "I lagged back into the void, you saw that!",
+            "The server must’ve been DDoSed, it wasn’t me.",
+            "I sneezed and missed my aim.",
+            "My mouse battery died mid-fight.",
+            "Your knockback is so inconsistent, wtf.",
+            "I didn’t even eat my gapple, my bad.",
+            "My hand slipped off the mouse.",
+            "I was alt-tabbed when you attacked me.",
+            "This client has a bug, I need to update.",
+            "I didn’t have my texture pack loaded properly.",
+            "The hit delay is insane on this server.",
+            "I had a render distance glitch, couldn’t see you.",
+            "I pressed the wrong hotkey for my sword.",
+            "You were abusing pearls, not fair.",
+            "I thought I had fire resistance, turns out no.",
+            "Your ping advantage is ridiculous.",
+            "I was adjusting my headset and couldn’t hear.",
+            "The enchantments on your gear are clearly fake.",
+            "My strafing key got stuck, couldn’t dodge.",
+            "I swear my clicks aren’t registering today.",
+            "You ghosted me while I was typing in chat.",
+            "I accidentally tabbed out mid-combat.",
+            "My internet provider is throttling me.",
+            "My potion threw in the wrong direction.",
+            "The server is literally dying right now.",
+            "My block placement glitched out.",
+            "You block-trapped me, that’s cheap.",
+            "I had to sneeze and couldn’t aim properly.",
+            "I wasn’t even trying, this is my warm-up match.",
+            "The texture pack made it hard to see your gear.",
+            "My hand cramped, gg though.",
+            "You only won because I’m out of practice.",
+            "I lagged out and reconnected too late.",
+            "My potion cooldown didn’t reset in time.",
+            "My render distance glitched and I couldn’t see you.",
+            "I clicked too fast and got flagged by anti-cheat.",
+            "I got rubberbanded back into your sword.",
+            "I wasn’t ready, I thought we were still preparing."
+        ];
+
+        const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)];
+        document.getElementById("excuse").textContent = randomExcuse;
+    </script>
+</body>
+</html>
